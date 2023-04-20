@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon price calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <p>Amazon shift calculator</p>
+        <input placeholder="cost of order" class="js-input"
+        onkeydown = "kidon(event);">
+        <button onclick="calculateTotal();
+        ">Calculate</button>
+        <p class="js-cost"></p>
+   <script>
+        function kidon(event){
+           
+            if(event.key === 'Enter'){
+                calculateTotal();
+            }
+        }
+        function calculateTotal()
+        {
+            const inputElement = document.querySelector('.js-input');
+               let cost = Number(inputElement.value);
+               console.log(cost);
+               if(cost < 40){
+                cost+=10;
+               }
+               document.querySelector('.js-cost').innerHTML = `$${cost}`;
+
+        }
+
+    </script>
+    
+</body>
+</html>
